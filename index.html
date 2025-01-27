@@ -4,7 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIExplorer</title>
-    <link rel="stylesheet" href="https://github.com/hamdi-elhamdi/quantumpulse.github.io/blob/main/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer utilities {
+            @keyframes gradient-move {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .bg-animated-gradient {
+                background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+                background-size: 800% 800%;
+                animation: gradient-move 10s ease infinite;
+            }
+        }
+
+        body {
+            @apply m-0 font-sans text-gray-800;
+        }
+
+        header {
+            @apply bg-gray-100 border-b border-gray-300;
+        }
+
+        .container {
+            @apply w-4/5 mx-auto py-5;
+        }
+
+        h1 {
+            @apply m-0 text-2xl;
+        }
+
+        nav ul {
+            @apply list-none p-0 m-0 flex gap-4;
+        }
+
+        nav a {
+            @apply no-underline text-gray-800;
+        }
+
+        .hero {
+            @apply text-center py-20 bg-animated-gradient;
+        }
+
+        .hero h2 {
+            @apply m-0 text-4xl;
+        }
+
+        .hero p {
+            @apply text-lg;
+        }
+
+        .btn {
+            @apply inline-block mt-5 px-5 py-2 bg-gray-800 text-white no-underline rounded;
+        }
+
+        .content {
+            @apply py-20 text-center;
+        }
+
+        footer {
+            @apply bg-gray-100 border-t border-gray-300 text-center py-5;
+        }
+    </style>
 </head>
 <body>
     <header>
