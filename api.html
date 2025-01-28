@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumPulse API Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 text-white shadow-lg">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <h1 class="text-3xl font-bold">QuantumPulse API</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="#overview" class="hover:text-gray-200 transition">Overview</a></li>
+                    <li><a href="#endpoints" class="hover:text-gray-200 transition">Endpoints</a></li>
+                    <li><a href="#examples" class="hover:text-gray-200 transition">Examples</a></li>
+                    <li><a href="#faq" class="hover:text-gray-200 transition">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 text-center bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-4 text-teal-700">API Overview</h2>
+            <p class="text-lg text-gray-600 mb-6">
+                Welcome to the QuantumPulse API! This API allows developers to integrate advanced features such as authorization, communication with the AI model, calculations, and quantum pulse performance into their applications.
+            </p>
+            <p class="text-lg text-gray-600">
+                Base URL: <span class="font-mono text-blue-500">https://quantumpulse-api/</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Endpoints Section -->
+    <section id="endpoints" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-4 text-blue-700">API Endpoints</h2>
+            <div class="space-y-8">
+                <!-- POST /authorize -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-teal-700">POST /authorize</h3>
+                    <p class="text-gray-600 mt-2">Authenticate users and generate an access token.</p>
+                    <h4 class="font-semibold mt-4">Request:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "username": "user@example.com",
+    "password": "securepassword123"
+}
+                    </pre>
+                    <h4 class="font-semibold mt-4">Response:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+                    </pre>
+                </div>
+
+                <!-- POST /communicate -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-700">POST /communicate</h3>
+                    <p class="text-gray-600 mt-2">Send a message to QuantumPulse-V3 for processing.</p>
+                    <h4 class="font-semibold mt-4">Request:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "token": "your_access_token",
+    "message": "Explain quantum physics in simple terms."
+}
+                    </pre>
+                    <h4 class="font-semibold mt-4">Response:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "response": "Quantum physics is the study of very small particles..."
+}
+                    </pre>
+                </div>
+
+                <!-- POST /calculate -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-green-700">POST /calculate</h3>
+                    <p class="text-gray-600 mt-2">Perform complex calculations using the AI model.</p>
+                    <h4 class="font-semibold mt-4">Request:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "token": "your_access_token",
+    "expression": "E = mc^2"
+}
+                    </pre>
+                    <h4 class="font-semibold mt-4">Response:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "result": "The energy equivalent is calculated as..."
+}
+                    </pre>
+                </div>
+
+                <!-- POST /performpulse -->
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-purple-700">POST /performpulse</h3>
+                    <p class="text-gray-600 mt-2">Execute a QuantumPulse operation.</p>
+                    <h4 class="font-semibold mt-4">Request:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "token": "your_access_token",
+    "operation": "run_pulse",
+    "parameters": {
+        "frequency": "1.21GHz",
+        "amplitude": "5.6"
+    }
+}
+                    </pre>
+                    <h4 class="font-semibold mt-4">Response:</h4>
+                    <pre class="bg-gray-100 p-4 rounded text-sm text-gray-800">
+{
+    "status": "success",
+    "pulse_id": "12345",
+    "details": "Pulse executed at 1.21GHz frequency."
+}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-100 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-extrabold mb-4 text-teal-700">FAQ</h2>
+            <p class="text-lg text-gray-600">Have questions? Check out our <a href="#" class="text-blue-500 hover:underline">developer documentation</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-500 via-teal-500 to-green-500 text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-lg">&copy; 2025 QuantumPulse API. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
